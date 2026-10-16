@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sketsa — belajar koding lewat visual</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="brand">
+    <b>Sketsa</b>
+    <span>belajar koding lewat visual</span>
+  </div>
+
+  <div class="avatar" aria-hidden="true">
+    <svg viewBox="0 0 38 38"><circle cx="19" cy="19" r="19"/><circle cx="19" cy="15" r="6"/><path d="M8 32 Q19 19 30 32 Z"/></svg>
+  </div>
+
+  <div class="stat">
+    <span class="lvl" id="level">1</span>
+    <div class="xpwrap">
+      <div class="xptrack"><div class="xpfill" id="xp-fill"></div></div>
+      <div class="xpnum" id="xp-num">0 XP</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <nav class="peta" aria-label="Peta misi">
+    <h2>Peta misi</h2>
+    <div id="daftar-misi"></div>
+  </nav>
+
+  <div class="kerja">
+
+    <div class="kolom">
+      <section class="panel">
+        <div class="phead">
+          <h3 id="judul-misi">Memuat…</h3>
+          <span class="tag" id="tag-misi"></span>
+        </div>
+        <div class="brief" id="brief-misi"></div>
+      </section>
+
+      <section class="panel">
+        <div class="phead">
+          <h3>Kode kamu</h3>
+          <span class="tag">JavaScript · p5.js</span>
+        </div>
+        <textarea id="editor" class="editor" spellcheck="false" aria-label="Editor kode"></textarea>
+        <div class="aksi">
+          <button id="tombol-jalankan" class="btn utama">Jalankan</button>
+          <button id="tombol-reset" class="btn samar">Kembalikan kode awal</button>
+          <span class="petunjuk" id="petunjuk-misi"></span>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel">
+      <div class="phead">
+        <h3>Hasil</h3>
+        <span class="tag">iframe sandbox</span>
+      </div>
+      <div class="panggung">
+        <iframe id="panggung" title="Hasil kode" sandbox="allow-scripts"></iframe>
+      </div>
+      <div class="log" id="log">Tekan Jalankan untuk melihat hasilnya.</div>
+    </section>
+
+  </div>
+</main>
+
+<div class="pop" id="pop" role="status" aria-live="polite"></div>
+
+<script src="levels.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
