@@ -31,51 +31,62 @@
 
   <nav class="peta" aria-label="Peta misi">
     <h2>Peta misi</h2>
-    <div id="daftar-misi"></div>
+    <div id="daftar-level"></div>
   </nav>
 
   <div class="kerja">
 
-    <div class="kolom">
-      <section class="panel">
-        <div class="phead">
-          <h3 id="judul-misi">Memuat…</h3>
-          <span class="tag" id="tag-misi"></span>
-        </div>
-        <div class="brief" id="brief-misi"></div>
-      </section>
-
-      <section class="panel">
-        <div class="phead">
-          <h3>Kode kamu</h3>
-          <span class="tag">JavaScript · p5.js</span>
-        </div>
-        <textarea id="editor" class="editor" spellcheck="false" aria-label="Editor kode"></textarea>
-        <div class="aksi">
-          <button id="tombol-jalankan" class="btn utama">Jalankan</button>
-          <button id="tombol-reset" class="btn samar">Kembalikan kode awal</button>
-          <span class="petunjuk" id="petunjuk-misi"></span>
-        </div>
-      </section>
-    </div>
-
-    <section class="panel">
+    <!-- ---------- Tahap 1: materi ---------- -->
+    <section class="panel" id="panel-materi">
       <div class="phead">
-        <h3>Hasil</h3>
-        <span class="tag">iframe sandbox</span>
+        <h3 id="judul-materi">Memuat…</h3>
+        <span class="tag" id="tag-materi"></span>
       </div>
-      <div class="panggung">
-        <iframe id="panggung" title="Hasil kode" sandbox="allow-scripts"></iframe>
+      <div class="brief" id="isi-materi"></div>
+      <div class="aksi">
+        <button class="btn utama" id="tombol-mulai">Mulai tantangan</button>
+        <span class="petunjuk">Pelajari materi sebelum mengerjakan tantangan</span>
       </div>
-      <div class="log" id="log">Tekan Jalankan untuk melihat hasilnya.</div>
     </section>
 
+    <!-- ---------- Tahap 2: tantangan ---------- -->
+    <div class="area-tantangan" id="area-tantangan" hidden>
+
+      <div class="kolom">
+        <section class="panel">
+          <div class="phead">
+            <h3 id="judul-tantangan">Tantangan</h3>
+            <span class="tag" id="tag-tantangan"></span>
+          </div>
+          <div class="brief" id="instruksi-tantangan"></div>
+          <div id="isi-soal"></div>
+          <div class="aksi">
+            <button class="btn utama" id="tombol-kirim">Periksa jawaban</button>
+            <button class="btn samar" id="tombol-reset" hidden>Kembalikan kode awal</button>
+            <button class="btn samar" id="tombol-kembali">Baca materi lagi</button>
+          </div>
+          <div class="log" id="log-soal" hidden></div>
+        </section>
+      </div>
+
+      <section class="panel" id="panel-hasil" hidden>
+        <div class="phead">
+          <h3>Hasil</h3>
+          <span class="tag">iframe sandbox</span>
+        </div>
+        <div class="panggung">
+          <iframe id="panggung" title="Hasil kode" sandbox="allow-scripts"></iframe>
+        </div>
+        <div class="log" id="log-kode">Tekan Jalankan untuk melihat hasilnya.</div>
+      </section>
+
+    </div>
   </div>
 </main>
 
 <div class="pop" id="pop" role="status" aria-live="polite"></div>
 
-<script src="levels.js"></script>
+<script src="data.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
